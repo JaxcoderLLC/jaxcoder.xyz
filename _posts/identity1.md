@@ -34,4 +34,4 @@ Here are a few key points highlighting the significance of reputation in establi
 
 **1.5 Cross-platform Reputation (cross-chain):** As blockchain technology evolves, the concept of identity reputation can extend beyond individual blockchain networks. Reputation frameworks can interoperate across multiple blockchain platforms, creating a unified reputation system. This enables reputation portability, where an individual's reputation established on one blockchain can be recognized and utilized in interactions on other compatible platforms.
 
-This is the first in a planned 6 part series to dive into Identity Reputation and Management with deep-dives into each section broken out into explainer and research articles.
+>This is the first in a planned 6 part series to dive into Identity Reputation and Management with deep-dives into each section broken out into explainer and research articles.

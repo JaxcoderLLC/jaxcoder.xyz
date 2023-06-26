@@ -56,4 +56,4 @@ iii) User Empowerment: Blockchain-based identity reputation systems empower indi
 
 iv) Interoperability: Blockchain's potential for interoperability allows reputation systems to span multiple platforms and networks, enabling reputation transfer and recognition across diverse ecosystems.
 
-This is the second part in a planned 6-part series to dive into Identity Reputation and Management with deep-dives into each section broken out into explainer and research articles.
+>This is the second part in a planned 6-part series to dive into Identity Reputation and Management with deep-dives into each section broken out into explainer and research articles.
