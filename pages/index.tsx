@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Container from "../components/container";
 import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
 import Layout from "../components/layout";
 import MoreStories from "../components/more-stories";
+import Navbar from "../components/navbar";
 import Post from "../interfaces/post";
 import { getAllPosts } from "../lib/api";
 
@@ -21,7 +21,7 @@ export default function Index({ allPosts }: Props) {
           <title>{`<jaxcoder.xyz />`}</title>
         </Head>
         <Container>
-          <Intro />
+          <Navbar />
           {heroPost && (
             <HeroPost
               title={heroPost.title}

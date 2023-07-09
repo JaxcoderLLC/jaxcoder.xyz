@@ -17,7 +17,7 @@ import walletConnectModule from "@web3-onboard/walletconnect";
 import web3authModule from "@web3-onboard/web3auth";
 
 // Example key • Replace with your infura key
-const INFURA_KEY = "2996ff3d1a1142689324a8341cb75c68";
+const INFURA_KEY = process.env.INFURA_KEY || "2996ff3d1a1142689324a8341cb75c68";
 
 const injected = injectedModule({
   custom: [
@@ -100,24 +100,41 @@ export default init({
       label: "Ethereum Mainnet",
       // used for network requests
       rpcUrl: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
+      blockExplorerUrl: "https://etherscan.io/",
     },
     {
       id: "111555111",
       token: "sETH",
       label: "Ethereum Sepolia Testnet",
       rpcUrl: `https://sepolia.infura.io/v3/${INFURA_KEY}`,
+      blockExplorerUrl: "https://sepolia.etherscan.io/",
+    },
+    {
+      id: "58008",
+      token: "ETH",
+      label: "Public Goods Network Testnet",
+      rpcUrl: "https://sepolia.publicgoods.network",
+      blockExplorerUrl: "https://explorer.sepolia.publicgoods.network/",
     },
     {
       id: "0xa",
       token: "ETH",
       label: "Optimism Mainnet",
       rpcUrl: `https://optimism-mainnet.infura.io/v3/${INFURA_KEY}`,
+      blockExplorerUrl: "https://optimistic.etherscan.io/",
     },
     {
-      id: "420",
+      id: "0x1a4",
       token: "opETH",
       label: "Optimism Goerli Testnet",
       rpcUrl: `https://optimism-goerli.infura.io/v3/${INFURA_KEY}`,
+      blockExplorerUrl: "https://goerli-optimism.etherscan.io/",
+    },
+    {
+      id: "0x6f70",
+      token: "ETH",
+      label: "Optimism Bedrock Goerli Testnet",
+      rpcUrl: "https://alpha-1-replica-1.bedrock-goerli.optimism.io",
     },
     {
       id: "0x66eed",
@@ -132,11 +149,23 @@ export default init({
       rpcUrl: `https://arbitrum-goerli.infura.io/v3/${INFURA_KEY}`,
     },
     {
+      id: "0x13881",
+      token: "MATIC",
+      label: "Mumbai Testnet",
+      rpcUrl: `https://polygon-mumbai.infura.io/v3/${INFURA_KEY}`,
+    },
+    {
       id: "0x89",
       token: "MATIC",
       label: "Polygon Mainnet",
       rpcUrl: `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`,
     },
+    {
+      id: "0x14a33",
+      token: "ETH",
+      label: "Base Goerli Testnet",
+      rpcUrl: "https://goerli.base.org",
+    }
   ],
   appMetadata: {
     // The name of your dApp
@@ -146,7 +175,7 @@ export default init({
     // Optional wide format logo (ie icon and text) to be displayed in the sidebar of connect modal. Defaults to icon if not provided
     logo: "<svg></svg>",
     // The description of your app
-    description: "Demo app for Onboard V2",
+    description: "Jaxcoder Blog and Portfolio",
     // The url to a getting started guide for app
     gettingStartedGuide: "http://mydapp.io/getting-started",
     // url that points to more information about app
