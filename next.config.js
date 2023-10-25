@@ -1,9 +1,4 @@
-const withNextra = require("nextra")("nextra-theme-docs", "./theme.config.tsx");
+/** @type {import('next').NextConfig} */
+const nextConfig = {}
 
-module.exports = {
-  withNextra: withNextra({
-    env: {
-      InfuraKey: process.env.INFURA_KEY,
-    },
-  }),
-};
+module.exports = nextConfig
