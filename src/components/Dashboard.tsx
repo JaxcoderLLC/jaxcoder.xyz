@@ -2,23 +2,24 @@
 
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
-    ChevronDownIcon,
-    MagnifyingGlassIcon,
+  ChevronDownIcon,
+  MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import {
-    Bars3Icon,
-    BellIcon,
-    CalendarIcon,
-    ChartPieIcon,
-    Cog6ToothIcon,
-    DocumentDuplicateIcon,
-    FolderIcon,
-    HomeIcon,
-    UsersIcon,
-    XMarkIcon,
+  Bars3Icon,
+  BellIcon,
+  CalendarIcon,
+  ChartPieIcon,
+  Cog6ToothIcon,
+  DocumentDuplicateIcon,
+  FolderIcon,
+  HomeIcon,
+  UsersIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import { useAccount, useEnsName } from "wagmi";
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
@@ -33,10 +34,6 @@ const teams = [
   { id: 2, name: "Tailwind Labs", href: "#", initial: "T", current: false },
   { id: 3, name: "Workcation", href: "#", initial: "W", current: false },
 ];
-const userNavigation = [
-  { name: "Your profile", href: "#" },
-  { name: "Sign out", href: "#" },
-];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -44,6 +41,51 @@ function classNames(...classes: string[]) {
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [ensName, setEnsName] = useState("");
+  const { address } = useAccount();
+  const {
+    data: ensData,
+    error: ensError,
+    status: ensStatus,
+  } = useEnsName({ address });
+
+  useEffect(() => {
+    if (!address) {
+      setSidebarOpen(false);
+    }
+  }, [address, ensData]);
+
+  useEffect(() => {
+    if (!ensData && !ensError) {
+      setEnsName(ensData || "");
+    }
+  }, [ensData, ensError]);
+
+  const shortenAddress = (address: string) => {
+    return `${address.slice(0, 4)}...${address.slice(-4)}`;
+  };
+
+  type UserNavigation = {
+    name: string;
+    href: string;
+    show: boolean;
+    onClick: () => void;
+  };
+
+  const logout = () => {
+    // logout
+    console.log("logout");
+  };
+
+  const userNavigation: UserNavigation[] = [
+    { name: "Your profile", href: "#", show: true, onClick: () => {} },
+    {
+      name: "Sign out",
+      href: "#",
+      show: address !== undefined,
+      onClick: logout,
+    },
+  ];
 
   return (
     <>
@@ -327,7 +369,9 @@ export default function Dashboard() {
                         className="ml-4 text-sm font-semibold leading-6 text-gray-900"
                         aria-hidden="true"
                       >
-                        Tom Cook
+                        {ensStatus === "loading"
+                          ? shortenAddress(address || "")
+                          : ensName || shortenAddress(address || "")}
                       </span>
                       <ChevronDownIcon
                         className="ml-2 h-5 w-5 text-gray-400"
@@ -348,15 +392,21 @@ export default function Dashboard() {
                       {userNavigation.map((item) => (
                         <Menu.Item key={item.name}>
                           {({ active }: { active: boolean }) => (
-                            <a
-                              href={item.href}
-                              className={classNames(
-                                active ? "bg-gray-50" : "",
-                                "block px-3 py-1 text-sm leading-6 text-gray-900"
+                            <>
+                              {item.show && (
+                                <button
+                                  className={classNames(
+                                    active
+                                      ? "bg-gray-100 text-gray-900"
+                                      : "text-gray-700",
+                                    "block px-4 py-2 text-sm leading-5 font-semibold"
+                                  )}
+                                  onClick={item.onClick}
+                                >
+                                  {item.name}
+                                </button>
                               )}
-                            >
-                              {item.name}
-                            </a>
+                            </>
                           )}
                         </Menu.Item>
                       ))}

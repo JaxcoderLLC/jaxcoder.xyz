@@ -1,3 +1,5 @@
+import Providers from "@/context/Providers";
+import "@rainbow-me/rainbowkit/styles.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -17,7 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full bg-black">
-      <body className={`h-full ${inter.className}`}>{children}</body>
+      <Providers>
+        <body className={`h-full ${inter.className}`}>{children}</body>
+      </Providers>
     </html>
   );
 }

@@ -9,12 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@allo-team/allo-v2-sdk": "^1.0.38",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
+    "@silk-wallet/silk-wallet-sdk": "^0.0.21",
     "@tailwindcss/forms": "^0.5.7",
+    "@tanstack/query-sync-storage-persister": "^5.17.19",
+    "@tanstack/react-query": "^5.17.19",
+    "@tanstack/react-query-persist-client": "^5.17.19",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "viem": "^2.4.0",
+    "wagmi": "^2.3.1"
   },
   "devDependencies": {
     "typescript": "^5",
