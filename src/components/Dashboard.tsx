@@ -369,7 +369,7 @@ export default function Dashboard() {
                         className="ml-4 text-sm font-semibold leading-6 text-gray-900"
                         aria-hidden="true"
                       >
-                        {ensStatus === "loading"
+                        {ensStatus === "pending"
                           ? shortenAddress(address || "")
                           : ensName || shortenAddress(address || "")}
                       </span>
