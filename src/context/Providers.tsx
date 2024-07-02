@@ -1,11 +1,12 @@
 "use client";
 
-import { persister, queryClient } from "@/services/queryClient";
+import { queryClient } from "@/services/queryClient";
 import { config } from "@/services/wagmi";
-import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
+// import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { WagmiProvider } from "wagmi";
 import { NextUIProvider } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
+import { QueryClientProvider } from "@tanstack/react-query";
 
 const Providers = (props: { children: JSX.Element[] | JSX.Element }) => {
   const router = useRouter();
@@ -13,12 +14,9 @@ const Providers = (props: { children: JSX.Element[] | JSX.Element }) => {
   return (
     <WagmiProvider config={config}>
       <NextUIProvider navigate={router.push}>
-        <PersistQueryClientProvider
-          client={queryClient}
-          persistOptions={{ persister }}
-        >
+        <QueryClientProvider client={queryClient}>
           {props.children}
-        </PersistQueryClientProvider>
+        </QueryClientProvider>
       </NextUIProvider>
     </WagmiProvider>
   );

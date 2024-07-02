@@ -10,8 +10,8 @@ export const queryClient = new QueryClient({
   },
 });
 
-export const persister = createSyncStoragePersister({
-  serialize,
-  storage: window.localStorage,
-  deserialize,
-});
+// export const persister = createSyncStoragePersister({
+//   serialize,
+//   // storage: window ? window.localStorage : undefined,
+//   deserialize,
+// });
