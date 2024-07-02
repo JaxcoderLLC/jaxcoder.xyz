@@ -22,7 +22,7 @@ export default function Glitch() {
     return () => clearInterval(interval);
   }, []);
 
-  const glitchStyle = {
+  const glitchStyle: React.CSSProperties = {
     position: "absolute",
     top: `${position.top}px`,
     left: `${position.left}px`,
