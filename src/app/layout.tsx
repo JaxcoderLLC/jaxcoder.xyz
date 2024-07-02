@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full bg-black">
       <Providers>
-        <main className="dark flex min-h-screen flex-col items-center justify-between pt-80">
+        <main className="dark min-h-screen text-foreground bg-background">
           {children}
         </main>
       </Providers>
