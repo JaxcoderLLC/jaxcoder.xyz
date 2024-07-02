@@ -1,12 +1,5 @@
 import { createConfig, http } from "wagmi";
-import {
-  arbitrum,
-  arbitrumNova,
-  arbitrumSepolia,
-  optimism,
-  optimismSepolia,
-  sepolia,
-} from "wagmi/chains";
+import { base, baseSepolia } from "wagmi/chains";
 
 declare module "wagmi" {
   interface Register {
@@ -15,13 +8,9 @@ declare module "wagmi" {
 }
 
 export const config = createConfig({
-  chains: [sepolia, optimism, optimismSepolia],
+  chains: [base, baseSepolia],
   transports: {
-    [optimismSepolia.id]: http(),
-    [optimism.id]: http(),
-    [sepolia.id]: http(),
-    [arbitrumSepolia.id]: http(),
-    [arbitrumNova.id]: http(),
-    [arbitrum.id]: http(),
+    [baseSepolia.id]: http(),
+    [base.id]: http(),
   },
 });

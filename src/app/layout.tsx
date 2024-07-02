@@ -20,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full bg-black">
       <Providers>
-        <body className={`h-full ${inter.className}`}>{children}</body>
+        <main className="dark flex min-h-screen flex-col items-center justify-between pt-80">
+          {children}
+        </main>
       </Providers>
     </html>
   );
