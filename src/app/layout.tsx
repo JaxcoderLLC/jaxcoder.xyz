@@ -1,14 +1,14 @@
-import Providers from "@/context/Providers";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Jaxcoder LLC",
-  description:
-    "Jaxcoder LLC is a software development company based in Jax, FL",
+  description: "Jaxcoder LLC is a cutting edge technology company",
 };
 
 export default function RootLayout({
@@ -17,12 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full bg-black">
-      <Providers>
-        <main className="dark min-h-screen text-foreground bg-background">
-          {children}
-        </main>
-      </Providers>
+    <html lang="en">
+      <body className={inter.className}>
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }
