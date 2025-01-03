@@ -93,9 +93,9 @@ const Header = () => {
               key={link.href}
               href={link.href}
               className="block px-4 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-              // onClick={(e) => {
-              //   setIsMobileMenuOpen(false);
-              // }}
+              onClick={(e) => {
+                setIsMobileMenuOpen(false);
+              }}
             >
               {link.label}
             </Link>
