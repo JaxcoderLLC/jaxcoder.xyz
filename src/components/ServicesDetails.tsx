@@ -1,4 +1,6 @@
+import Image from "next/image";
 import ContactForm from "./ContactForm";
+import hippaGif from "@/assets/hipaa_1.gif";
 
 export default function ServicesDetails() {
   return (
@@ -100,19 +102,33 @@ export default function ServicesDetails() {
               only authorized individuals may gain entry to sensitive data.
             </p>
           </div>
-          <p className="mt-10 text-2xl font-bold text-primary-600 hover:text-primary-900 transition-colors">
-            What is HIPAA Security?
-          </p>
-          <p className="mt-4 text-primary-600 hover:text-primary-900 transition-colors">
-            HIPAA Security refers to safeguards and measures put into place to
-            secure electronically Protected Health Information (ePHI) against
-            unauthorized access, use, and disclosure. The HIPAA Security Rule
-            sets forth specific requirements for covered entities and business
-            associates regarding confidentiality, integrity, and availability of
-            ePHI; this may involve the implementation of administrative,
-            physical, or technical safeguards within organizations to guard
-            against unauthorized access, use, and disclosure of ePHI.
-          </p>
+
+          <div className="my-10 flex justify-center">
+            <Image
+              src={hippaGif}
+              alt="HIPAA Privacy & Compliance"
+              width={500}
+              height={500}
+              className="rounded-lg shadow-md border border-primary-200"
+              priority
+            />
+          </div>
+
+          <div>
+            <p className="mt-10 text-2xl font-bold text-primary-600 hover:text-primary-900 transition-colors">
+              What is HIPAA Security?
+            </p>
+            <p className="mt-4 text-primary-600 hover:text-primary-900 transition-colors">
+              HIPAA Security refers to safeguards and measures put into place to
+              secure electronically Protected Health Information (ePHI) against
+              unauthorized access, use, and disclosure. The HIPAA Security Rule
+              sets forth specific requirements for covered entities and business
+              associates regarding confidentiality, integrity, and availability
+              of ePHI; this may involve the implementation of administrative,
+              physical, or technical safeguards within organizations to guard
+              against unauthorized access, use, and disclosure of ePHI.
+            </p>
+          </div>
           <div className="mt-10 p-4 border border-secondary-200 shadow-md rounded-lg">
             <p className="text-2xl font-bold text-primary-600 hover:text-primary-900 transition-colors">
               Complying with HIPAA Security:
