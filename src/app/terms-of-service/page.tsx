@@ -2,8 +2,8 @@
 
 const TermsOfService = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 mt-4 text-green-900">
-      <div className="border-l border-r border-green-700 px-4 py-8">
+    <div className="max-w-4xl mx-auto px-4 py-8 mt-4 text-primary-900">
+      <div className="border-l border-r border-primary-700 px-4 py-8">
         <h1 className="text-3xl font-bold mb-6 text-center">
           Terms of Service
         </h1>

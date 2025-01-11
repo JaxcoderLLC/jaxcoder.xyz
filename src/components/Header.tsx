@@ -9,18 +9,18 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: "Home" },
+    // { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
-    <header className="border border-b-1 border-b-green-500 relative">
+    <header className="border-b border-primary-200">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center font-bold">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl text-green-600 hover:text-green-900">
+            <Link href="/" className="text-xl font-bold text-primary-600">
               Jaxcoder LLC
             </Link>
           </div>
@@ -32,7 +32,7 @@ const Header = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-green-600 hover:text-green-900 px-3 py-2 transition-colors"
+                  className="text-primary-700 hover:text-primary-900 hover:bg-primary-50 px-3 py-2 transition-colors"
                 >
                   {link.label}
                 </Link>
