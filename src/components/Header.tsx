@@ -16,11 +16,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white border border-b-1 border-b-blue-500 relative">
+    <header className="border border-b-1 border-b-green-500 relative">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+        <div className="flex justify-between h-16 items-center font-bold">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-blue-600">
+            <Link href="/" className="text-xl text-green-600 hover:text-green-900">
               Jaxcoder LLC
             </Link>
           </div>
@@ -32,7 +32,7 @@ const Header = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-600 hover:text-gray-900 px-3 py-2 transition-colors"
+                  className="text-green-600 hover:text-green-900 px-3 py-2 transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -44,7 +44,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-green-600 hover:text-green-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
             >
               <span className="sr-only">Open main menu</span>
               {!isMobileMenuOpen ? (
@@ -85,14 +85,14 @@ const Header = () => {
       <div
         className={`${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        } absolute top-16 right-0 w-64 bg-white border border-gray-200 rounded-bl-lg shadow-lg transition-transform duration-200 ease-in-out md:hidden`}
+        } absolute top-16 right-0 w-64 bg-white border border-green-200 rounded-bl-lg shadow-lg transition-transform duration-200 ease-in-out md:hidden`}
       >
         <div className="py-2">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="block px-4 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-4 py-2 text-base font-medium text-green-600 hover:text-green-900 hover:bg-green-50"
               onClick={(e) => {
                 setIsMobileMenuOpen(false);
               }}

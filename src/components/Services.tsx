@@ -1,7 +1,13 @@
-import { HiCode, HiCog, HiChartBar, HiLightningBolt } from "react-icons/hi";
+import { HiCode, HiCog, HiChartBar, HiLightningBolt, HiLockClosed } from "react-icons/hi";
 import ServiceCard from "./ServiceCard";
 
 const services = [
+  {
+    title: "HIPAA Compliance",
+    description:
+      "We develop HIPAA compliant software to ensure the security and privacy of your patient data.",
+    Icon: HiLockClosed,
+  },
   {
     title: "Digital Transformation",
     description:
@@ -14,12 +20,12 @@ const services = [
       "Build tailored software solutions to meet your specific needs.",
     Icon: HiCode,
   },
-  {
-    title: "Data Analytics",
-    description:
-      "Leverage data-driven insights to make informed business decisions.",
-    Icon: HiChartBar,
-  },
+  // {
+  //   title: "Data Analytics",
+  //   description:
+  //     "Leverage data-driven insights to make informed business decisions.",
+  //   Icon: HiChartBar,
+  // },
   {
     title: "Automations",
     description:
@@ -30,16 +36,16 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="bg-white py-4">
+    <div className="py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900">
+          <h2 className="text-3xl font-extrabold text-green-900">
             Our Services
           </h2>
-          <p className="mt-4 text-xl text-gray-500">
+          <p className="mt-4 text-xl text-green-600">
             Comprehensive technology solutions for your business needs.
           </p>
-          <p className="mt-2 text-lg text-gray-500">
+          <p className="mt-2 text-lg text-green-600">
             From custom software development to digital transformation, we help businesses scale, automate, and innovate in today's digital landscape.
           </p>
         </div>
