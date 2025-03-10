@@ -1,11 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
-// import { useRouter } from "next/navigation";
+import AuthButtons from "./AuthButtons";
 
 const Header = () => {
-  // const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -27,7 +26,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-center space-x-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -37,6 +36,9 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
+              <Suspense fallback={<div className="h-8 w-8 animate-pulse rounded-full bg-gray-200" />}>
+                <AuthButtons />
+              </Suspense>
             </div>
           </div>
 
@@ -83,9 +85,8 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-y-0 right-0 w-64 bg-white border-l border-gray-200 shadow-lg transform transition-transform duration-200 ease-in-out md:hidden z-[60] ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed inset-y-0 right-0 w-64 bg-white border-l border-gray-200 shadow-lg transform transition-transform duration-200 ease-in-out md:hidden z-[60] ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         style={{ top: "4rem" }}
       >
         <div className="py-2">

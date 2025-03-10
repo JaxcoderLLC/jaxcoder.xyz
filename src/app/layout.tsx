@@ -6,7 +6,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
-// import { Spotlight } from "@/components/Spotlight";
 
 const inter = Inter({ subsets: ["latin"] });
 
