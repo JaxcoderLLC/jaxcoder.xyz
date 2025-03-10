@@ -79,18 +79,18 @@ export default function ContactForm() {
   return (
     <div>
       {isSubmitted && (
-        <div className="mb-6 p-6 rounded-lg bg-green-50 border border-green-200 shadow-sm animate-fade-in">
-          <div className="flex items-center space-x-3">
-            <div className="flex-shrink-0">
-              <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="mb-4 sm:mb-6 p-4 sm:p-6 rounded-lg bg-green-50 border border-green-200 shadow-sm animate-fade-in">
+          <div className="flex items-start sm:items-center space-x-3">
+            <div className="flex-shrink-0 mt-1 sm:mt-0">
+              <svg className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <div>
-              <h3 className="text-lg font-medium text-green-900 mb-1">
+            <div className="flex-1">
+              <h3 className="text-base sm:text-lg font-medium text-green-900 mb-0.5 sm:mb-1">
                 Message Received!
               </h3>
-              <p className="text-green-700">
+              <p className="text-sm sm:text-base text-green-700">
                 Thank you for reaching out. We'll get back to you within 24 hours.
               </p>
             </div>
