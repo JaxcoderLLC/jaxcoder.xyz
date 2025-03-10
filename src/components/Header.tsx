@@ -16,7 +16,7 @@ const Header = () => {
   ];
 
   return (
-    <header>
+    <header className="relative z-50">
       <nav className="w-full">
         <div className="flex justify-between h-16 items-center font-bold">
           <div className="flex-shrink-0">
@@ -83,9 +83,10 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`${
+        className={`fixed inset-y-0 right-0 w-64 bg-white border-l border-gray-200 shadow-lg transform transition-transform duration-200 ease-in-out md:hidden z-[60] ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        } absolute top-16 right-0 w-64 bg-white border border-gray-200 rounded-bl-lg shadow-lg transition-transform duration-200 ease-in-out md:hidden`}
+        }`}
+        style={{ top: "4rem" }}
       >
         <div className="py-2">
           {navLinks.map((link) => (
@@ -93,9 +94,7 @@ const Header = () => {
               key={link.href}
               href={link.href}
               className="block px-4 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50"
-              onClick={(e) => {
-                setIsMobileMenuOpen(false);
-              }}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.label}
             </Link>
@@ -106,7 +105,7 @@ const Header = () => {
       {/* Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-25 md:hidden"
+          className="fixed inset-0 bg-black bg-opacity-25 md:hidden z-[55]"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
