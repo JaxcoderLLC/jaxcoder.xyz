@@ -3,6 +3,17 @@
 import { FormEvent, useState } from "react";
 import { FormData } from "../app/types";
 
+const services = [
+  "HIPAA Compliance",
+  "Custom Software Development",
+  "Digital Transformation",
+  "Blockchain Development",
+  "Automations",
+  "AI Agents",
+  "Mobile App Development",
+  "Web Application Development",
+];
+
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -66,10 +77,24 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="">
+    <div>
       {isSubmitted && (
-        <div className="mb-4 p-4 rounded-md">
-          Thank you for your message! We'll get back to you soon.
+        <div className="mb-6 p-6 rounded-lg bg-green-50 border border-green-200 shadow-sm animate-fade-in">
+          <div className="flex items-center space-x-3">
+            <div className="flex-shrink-0">
+              <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium text-green-900 mb-1">
+                Message Received!
+              </h3>
+              <p className="text-green-700">
+                Thank you for reaching out. We'll get back to you within 24 hours.
+              </p>
+            </div>
+          </div>
         </div>
       )}
 
@@ -79,8 +104,8 @@ export default function ContactForm() {
       >
         <div>
           <div className="flex flex-col">
-            <span className="text-xl pb-4 font-medium">
-              Get a FREE consultation | HIPAA compliance
+            <span className="text-xl pb-4 font-medium text-center">
+              Get a FREE consultation
             </span>
           </div>
           <label htmlFor="name" className="block text-sm font-medium">
@@ -138,10 +163,11 @@ export default function ContactForm() {
             className="mt-1 p-2 block w-full rounded-md bg-gray-50 border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-200"
           >
             <option value="">Select a service</option>
-            <option value="HIPAA Compliance">HIPAA Compliance</option>
-            <option value="Custom Software Development">Custom Software Development</option>
-            <option value="Digital Transformation">Digital Transformation</option>
-            <option value="Cloud Solutions">Cloud Solutions</option>
+            {services.map((service) => (
+              <option key={service} value={service}>
+                {service}
+              </option>
+            ))}
           </select>
         </div>
         <div>
