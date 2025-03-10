@@ -1,88 +1,199 @@
+import { IconType } from 'react-icons';
+import Link from 'next/link';
 import {
-  HiCode,
-  HiCog,
-  HiChartBar,
-  HiLightningBolt,
-  HiLockClosed,
-  HiCloud,
-} from "react-icons/hi";
-import ServiceCard from "./ServiceCard";
-import Link from "next/link";
-import ContactForm from "./ContactForm";
-import ServicesDetails from "./ServicesDetails";
+  FaCode,
+  FaMobileAlt,
+  FaCloud,
+  FaDesktop,
+  FaLock,
+  FaBrain,
+  FaBitcoin,
+  FaEthereum,
+  FaRobot
+} from 'react-icons/fa';
 
-const services = [
-  {
-    title: "HIPAA Compliance",
-    description:
-      "We develop HIPAA compliant software to ensure the security and privacy of your patient data.",
-    Icon: HiLockClosed,
-  },
-  {
-    title: "Digital Transformation",
-    description:
-      "Transform your business with modern digital solutions and strategies.",
-    Icon: HiCog,
-  },
-  {
-    title: "Custom Development",
-    description:
-      "Build tailored software solutions to meet your specific needs.",
-    Icon: HiCode,
-  },
-  {
-    title: "Cloud Solutions",
-    description:
-      "Leverage the power of cloud computing to scale your business.",
-    Icon: HiCloud,
-  },
-  // {
-  //   title: "Data Analytics",
-  //   description:
-  //     "Leverage data-driven insights to make informed business decisions.",
-  //   Icon: HiChartBar,
-  // },
-  // {
-  //   title: "Automations",
-  //   description:
-  //     "Automate your business processes to save time and increase efficiency.",
-  //   Icon: HiLightningBolt,
-  // },
-];
-
-export default function Services() {
+// Service card component
+const ServiceCard = ({ title, description, Icon }: {
+  title: string;
+  description: string;
+  Icon: IconType;
+}) => {
   return (
-    <div className="py-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-primary-900">
-            Our Services
-          </h2>
-          <p className="mt-4 text-xl text-primary-600">
-            Comprehensive technology solutions for your business needs.
-          </p>
-          <p className="mt-2 text-lg text-primary-600">
-            From custom software development to digital transformation, we help
-            businesses scale, automate, and innovate in today's digital
-            landscape.
-          </p>
-        </div>
+    <div className="flex flex-col items-center p-6 bg-white rounded-lg border border-gray-200 transition-all duration-300 hover:shadow-lg hover:border-gray-300 group h-full">
+      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-black text-white transition-colors duration-300 group-hover:bg-gray-800">
+        <Icon className="h-6 w-6" />
+      </div>
+      <h3 className="mt-4 text-lg font-medium text-center text-black">{title}</h3>
+      <p className="mt-2 text-base text-gray-600 text-center">{description}</p>
+    </div>
+  );
+};
 
-        <div className="mt-10">
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="shadow-md hover:shadow-2xl bg-primary-100 rounded-lg overflow-hidden transition-all duration-300 border border-primary-200"
-              >
-                <div className="p-6">
-                  <ServiceCard {...service} />
-                </div>
+const Services = () => {
+  const servicesData = [
+    {
+      title: "AI Agents",
+      description: "AI agents that can help you with your business.",
+      Icon: FaBrain
+    },
+    {
+      title: "Custom Software Development",
+      description: "Tailored software solutions designed to address your specific business challenges and goals.",
+      Icon: FaCode
+    },
+    {
+      title: "Mobile App Development",
+      description: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
+      Icon: FaMobileAlt
+    },
+    {
+      title: "Blockchain Development",
+      description: "Scalable, secure, and cost-effective blockchain development services.",
+      Icon: FaEthereum
+    },
+    {
+      title: "Web Application Development",
+      description: "Responsive, modern web applications built with the latest technologies.",
+      Icon: FaDesktop
+    },
+    {
+      title: "Automations",
+      description: "Automations that can help you with your business.",
+      Icon: FaRobot
+    }
+  ];
+
+  return (
+    <div className="w-full py-8">
+      <div className="mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {servicesData.map((service, index) => (
+            <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200 h-full">
+              <div className="p-6 h-full">
+                <ServiceCard
+                  title={service.title}
+                  description={service.description}
+                  Icon={service.Icon}
+                />
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* HIPAA CTA Section */}
+      <div className="mt-16 relative overflow-hidden bg-gradient-to-br from-gray-50 to-white p-8 rounded-lg border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-black opacity-5 rounded-full -translate-y-16 translate-x-16"></div>
+        <div className="absolute bottom-0 left-0 w-24 h-24 bg-black opacity-5 rounded-full translate-y-12 -translate-x-12"></div>
+        
+        <div className="relative flex flex-col lg:flex-row items-center">
+          <div className="lg:w-2/3 lg:pr-8">
+            <div className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-full mb-4">
+              Healthcare Compliance
+            </div>
+            <h3 className="text-3xl font-bold text-black mb-4">
+              HIPAA Compliance Solutions
+            </h3>
+            <p className="text-gray-700 mb-6 text-lg">
+              Ensure your healthcare technology meets all regulatory requirements with our specialized HIPAA compliance services.
+            </p>
+          </div>
+          <div className="lg:w-1/3 flex justify-center mt-6 lg:mt-0">
+            <Link
+              href="/services/hipaa"
+              className="group relative inline-flex items-center justify-center px-8 py-3 border-2 border-black text-base font-medium rounded-md text-white bg-black hover:bg-white hover:text-black transition-all duration-300"
+            >
+              <span className="relative z-10">Learn More</span>
+              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            </Link>
           </div>
         </div>
       </div>
+
+      {/* Additional Info Section */}
+      <div className="mt-16 bg-white p-8 rounded-lg border border-gray-200 shadow-sm">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-black mb-4">
+              Our Approach
+            </h2>
+            <div className="w-24 h-1 bg-black mx-auto"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold">1</div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">Discovery & Planning</h3>
+                  <p className="text-gray-600">We begin by understanding your business needs and objectives through detailed consultation and analysis.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold">2</div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">Design & Development</h3>
+                  <p className="text-gray-600">Our team works closely with you to design and develop the optimal solution using cutting-edge technologies.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold">3</div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">Agile Methodology</h3>
+                  <p className="text-gray-600">We employ agile methodologies to ensure flexibility and transparency throughout the development process.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold">4</div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">Regular Updates</h3>
+                  <p className="text-gray-600">Regular updates and feedback sessions keep you informed and involved throughout the process.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold">5</div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">Quality Assurance</h3>
+                  <p className="text-gray-600">Comprehensive testing ensures high-quality, reliable deliverables that meet your expectations.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold">6</div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black mb-2">Ongoing Support</h3>
+                  <p className="text-gray-600">We provide continuous support and maintenance to ensure your solution remains optimal.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 italic">
+              "Whether you need a complete digital transformation or assistance with a specific technology challenge, our team has the expertise to help you succeed."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Call to Action */}
+      <div className="mt-12 text-center">
+        <Link
+          href="/contact"
+          className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800"
+        >
+          Contact Us Today
+        </Link>
+      </div>
     </div>
   );
-}
+};
+
+export default Services;

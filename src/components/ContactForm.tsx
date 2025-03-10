@@ -75,7 +75,7 @@ export default function ContactForm() {
 
       <form
         onSubmit={handleSubmit}
-        className="grid grid-cols-1 gap-6 border border-1 border-secondary-200 text-primary-700 rounded-lg p-6 shadow-lg"
+        className="grid grid-cols-1 gap-6 border border-1 border-gray-200 text-black rounded-lg p-6 shadow-lg"
       >
         <div>
           <div className="flex flex-col">
@@ -83,7 +83,7 @@ export default function ContactForm() {
               Get a FREE consultation | HIPAA compliance
             </span>
           </div>
-          <label htmlFor="name" className="block text-sm font-medium ">
+          <label htmlFor="name" className="block text-sm font-medium">
             Name
           </label>
           <input
@@ -93,11 +93,11 @@ export default function ContactForm() {
             autoFocus
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="mt-1 p-2 block w-full  bg-secondary-200 rounded-md border-primary-500 shadow-sm focus:border-primary-600 focus:ring-primary-300"
+            className="mt-1 p-2 block w-full bg-gray-50 rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-200"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium ">
+          <label htmlFor="email" className="block text-sm font-medium">
             Email
           </label>
           <input
@@ -108,11 +108,11 @@ export default function ContactForm() {
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
-            className="mt-1 p-2 block w-full bg-secondary-200 rounded-md border-primary-500 shadow-sm focus:border-primary-600 focus:ring-primary-300"
+            className="mt-1 p-2 block w-full bg-gray-50 rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-200"
           />
         </div>
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium ">
+          <label htmlFor="phone" className="block text-sm font-medium">
             Phone
           </label>
           <input
@@ -123,11 +123,11 @@ export default function ContactForm() {
             onChange={(e) =>
               setFormData({ ...formData, phone: e.target.value })
             }
-            className="mt-1 p-2 block w-full bg-secondary-200 rounded-md border-primary-500 shadow-sm focus:border-primary-600 focus:ring-primary-300"
+            className="mt-1 p-2 block w-full bg-gray-50 rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-200"
           />
         </div>
         <div>
-          <label htmlFor="interest" className="block text-sm font-medium text-primary-700">
+          <label htmlFor="interest" className="block text-sm font-medium text-black">
             Interest
           </label>
           <select
@@ -135,7 +135,7 @@ export default function ContactForm() {
             id="interest"
             value={formData.interest}
             onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-            className="mt-1 p-2 block w-full rounded-md bg-secondary-200 border-primary-300 shadow-sm focus:border-secondary-500 focus:ring-secondary-500"
+            className="mt-1 p-2 block w-full rounded-md bg-gray-50 border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-200"
           >
             <option value="">Select a service</option>
             <option value="HIPAA Compliance">HIPAA Compliance</option>
@@ -145,10 +145,10 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="message" className="block text-sm font-medium ">
+          <label htmlFor="message" className="block text-sm font-medium">
             Message
           </label>
-          <span className="text-xs text-primary-400">
+          <span className="text-xs text-gray-600">
             *Any details we should know.
           </span>
           <textarea
@@ -159,13 +159,13 @@ export default function ContactForm() {
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
             }
-            className="mt-1 p-2 block w-full bg-secondary-200 rounded-md border-primary-500 shadow-sm focus:border-primary-600 focus:ring-primary-300"
+            className="mt-1 p-2 block w-full bg-gray-50 rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-200"
           />
         </div>
         <div>
           <button
             type="submit"
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-secondary-400 hover:bg-secondary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500"
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
           >
             Send Message
           </button>
