@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { MagnetizeButton } from '@/components/MagnetButton';
 
 const HIPAAPage = () => {
   return (
@@ -17,7 +20,7 @@ const HIPAAPage = () => {
           
           <div className="my-10 flex justify-center">
             <Image
-              src="/images/hipaa_1.gif"
+              src="/images/hipaa.gif"
               alt="HIPAA Privacy & Compliance"
               width={600}
               height={600}
@@ -93,11 +96,10 @@ const HIPAAPage = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <Link 
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800"
-            >
-              Contact Us About HIPAA Compliance
+            <Link href="/contact">
+              <MagnetizeButton particleCount={20} attractRadius={150}>
+                Contact Us About HIPAA Compliance
+              </MagnetizeButton>
             </Link>
           </div>
         </div>

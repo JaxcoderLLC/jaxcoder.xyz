@@ -3,6 +3,7 @@
 import { Suspense, useState } from 'react';
 import { SignIn, UserButton } from '@stackframe/stack';
 import { useUser } from "@stackframe/stack";
+import MetallicButton from './MetallicButton';
 
 const LoginForm = ({ onClose }: { onClose: () => void }) => {
   return (
@@ -34,12 +35,9 @@ const AuthButtonsContent = () => {
         <UserButton />
       ) : (
         <>
-          <button
-            onClick={() => setShowLoginForm(true)}
-            className="text-gray-700 hover:text-black hover:bg-gray-50 px-3 py-2 transition-colors hover:border-gray-200 hover:border-2 hover:rounded-lg"
-          >
+          <MetallicButton onClick={() => setShowLoginForm(true)}>
             Client Login
-          </button>
+          </MetallicButton>
           {showLoginForm && (
             <LoginForm onClose={() => setShowLoginForm(false)} />
           )}

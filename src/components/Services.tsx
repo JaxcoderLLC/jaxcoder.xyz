@@ -3,14 +3,12 @@ import Link from 'next/link';
 import {
   FaCode,
   FaMobileAlt,
-  FaCloud,
   FaDesktop,
-  FaLock,
   FaBrain,
-  FaBitcoin,
   FaEthereum,
   FaRobot
 } from 'react-icons/fa';
+import { MagnetizeButton } from './MagnetButton';
 
 // Service card component
 const ServiceCard = ({ title, description, Icon }: {
@@ -86,7 +84,7 @@ const Services = () => {
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-black opacity-5 rounded-full -translate-y-16 translate-x-16"></div>
         <div className="absolute bottom-0 left-0 w-24 h-24 bg-black opacity-5 rounded-full translate-y-12 -translate-x-12"></div>
-        
+
         <div className="relative flex flex-col lg:flex-row items-center">
           <div className="lg:w-2/3 lg:pr-8">
             <div className="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-full mb-4">
@@ -100,12 +98,10 @@ const Services = () => {
             </p>
           </div>
           <div className="lg:w-1/3 flex justify-center mt-6 lg:mt-0">
-            <Link
-              href="/services/hipaa"
-              className="group relative inline-flex items-center justify-center px-8 py-3 border-2 border-black text-base font-medium rounded-md text-white bg-black hover:bg-white hover:text-black transition-all duration-300"
-            >
-              <span className="relative z-10">Learn More</span>
-              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            <Link href="/services/hipaa">
+              <MagnetizeButton particleCount={15} attractRadius={100}>
+                Learn More
+              </MagnetizeButton>
             </Link>
           </div>
         </div>
@@ -120,7 +116,7 @@ const Services = () => {
             </h2>
             <div className="w-24 h-1 bg-black mx-auto"></div>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
@@ -184,12 +180,9 @@ const Services = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="mt-12 text-center">
-        <Link
-          href="/contact"
-          className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800"
-        >
-          Contact Us Today
+      <div className="mt-12 text-center z-20">
+        <Link href="/contact">
+          <MagnetizeButton particleCount={30} attractRadius={250}>Contact Us Today</MagnetizeButton>
         </Link>
       </div>
     </div>
