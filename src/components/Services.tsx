@@ -23,7 +23,7 @@ const ServiceCard = ({ title, description, Icon, onClick }: {
   onClick: () => void;
 }) => {
   return (
-    <div 
+    <div
       onClick={onClick}
       className="flex flex-col items-center p-6 bg-white rounded-lg border border-gray-200 transition-all duration-300 hover:shadow-lg hover:border-primary-500 group h-full cursor-pointer"
     >
@@ -119,7 +119,7 @@ const Services = () => {
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesData.map((service, index) => (
-            <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200 h-full">
+            <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg hover:shadow-purple-500 transition-all duration-300 border border-gray-200 h-full">
               <div className="p-6 h-full">
                 <ServiceCard
                   title={service.title}

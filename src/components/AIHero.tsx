@@ -9,12 +9,12 @@ import { GradientButton } from "./GradientButton";
 export function AIHero() {
   return (
     <div className="w-full p-4 sm:py-12 sm:px-6 lg:px-8">
-      <Card className="w-full h-[300px] sm:h-[400px] md:h-[500px] bg-black/[0.96] relative overflow-hidden">
+      <Card className="w-full h-[300px] sm:h-[400px] md:h-[500px] bg-gradient-to-br from-purple-900 via-purple-900 to-purple-500 relative overflow-hidden">
         <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" />
 
         <div className="flex flex-col md:flex-row h-full">
           {/* Left content */}
-          <div className="flex-1 z-10 p-4 sm:p-6 md:p-8 relative z-9 flex flex-col justify-center">
+          <div className="flex-1 z-10 p-4 sm:p-6 md:p-8 relative flex flex-col justify-center">
             <h1 className="text-3xl hidden md:block md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
               Jaxcoder LLC
             </h1>
