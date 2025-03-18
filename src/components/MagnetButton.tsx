@@ -22,7 +22,7 @@ interface Particle {
 function MagnetizeButton({
   className,
   particleCount = 12,
-  attractRadius = 50,
+  attractRadius = 100,
   ...props
 }: MagnetizeButtonProps) {
   const [isAttracting, setIsAttracting] = useState(false);

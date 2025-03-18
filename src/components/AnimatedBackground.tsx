@@ -48,10 +48,10 @@ const AnimatedBackground = () => {
         this.canvasHeight = canvasHeight;
         this.x = Math.random() * this.canvasWidth;
         this.y = Math.random() * this.canvasHeight;
-        this.size = Math.random() * 2; // Slightly larger stars
-        this.speedX = (Math.random() - 0.5) * 0.5; // Faster movement
+        this.size = Math.random() * 2;
+        this.speedX = (Math.random() - 0.5) * 0.5;
         this.speedY = (Math.random() - 0.5) * 0.5;
-        this.opacity = Math.random() * 0.7 + 0.3; // Higher opacity
+        this.opacity = Math.random() * 0.7 + 0.3;
       }
 
       update() {
@@ -69,7 +69,7 @@ const AnimatedBackground = () => {
         if (!ctx) return;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 0, 0, ${this.opacity})`;
+        ctx.fillStyle = `rgba(147, 51, 234, ${this.opacity})`; // Purple color
         ctx.fill();
       }
     }

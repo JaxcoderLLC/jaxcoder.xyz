@@ -1,3 +1,5 @@
+"use client";
+
 import { IconType } from 'react-icons';
 import Link from 'next/link';
 import {
@@ -9,61 +11,112 @@ import {
   FaRobot
 } from 'react-icons/fa';
 import { MagnetizeButton } from './MagnetButton';
+import MetallicButton from './MetallicButton';
+import ServiceModal from './ServiceModal';
+import { useState } from 'react';
 
 // Service card component
-const ServiceCard = ({ title, description, Icon }: {
+const ServiceCard = ({ title, description, Icon, onClick }: {
   title: string;
   description: string;
   Icon: IconType;
+  onClick: () => void;
 }) => {
   return (
-    <div className="flex flex-col items-center p-6 bg-white rounded-lg border border-gray-200 transition-all duration-300 hover:shadow-lg hover:border-gray-300 group h-full">
-      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-black text-white transition-colors duration-300 group-hover:bg-gray-800">
+    <div 
+      onClick={onClick}
+      className="flex flex-col items-center p-6 bg-white rounded-lg border border-gray-200 transition-all duration-300 hover:shadow-lg hover:border-primary-500 group h-full cursor-pointer"
+    >
+      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-black text-white transition-colors duration-300 group-hover:bg-primary-600">
         <Icon className="h-6 w-6" />
       </div>
-      <h3 className="mt-4 text-lg font-medium text-center text-black">{title}</h3>
+      <h3 className="mt-4 text-lg font-medium text-center text-black group-hover:text-primary-600 transition-colors duration-300">{title}</h3>
       <p className="mt-2 text-base text-gray-600 text-center">{description}</p>
     </div>
   );
 };
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState<number | null>(null);
+
   const servicesData = [
     {
       title: "AI Agents",
       description: "AI agents that can help you with your business.",
-      Icon: FaBrain
+      Icon: FaBrain,
+      details: [
+        "Custom AI solutions tailored to your business needs",
+        "Natural language processing and understanding",
+        "Automated task handling and decision making",
+        "Integration with existing business systems",
+        "24/7 availability and scalability"
+      ]
     },
     {
       title: "Custom Software Development",
       description: "Tailored software solutions designed to address your specific business challenges and goals.",
-      Icon: FaCode
+      Icon: FaCode,
+      details: [
+        "End-to-end custom software development",
+        "Scalable and maintainable solutions",
+        "Modern tech stack and best practices",
+        "Agile development methodology",
+        "Comprehensive testing and quality assurance"
+      ]
     },
     {
       title: "Mobile App Development",
       description: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
-      Icon: FaMobileAlt
+      Icon: FaMobileAlt,
+      details: [
+        "iOS and Android app development",
+        "Cross-platform solutions with React Native",
+        "User-centric design and UX",
+        "App store optimization",
+        "Performance optimization and testing"
+      ]
     },
     {
       title: "Blockchain Development",
       description: "Scalable, secure, and cost-effective blockchain development services.",
-      Icon: FaEthereum
+      Icon: FaEthereum,
+      details: [
+        "Smart contract development",
+        "DApp creation and deployment",
+        "Blockchain integration services",
+        "Security auditing and testing",
+        "Token development and management"
+      ]
     },
     {
       title: "Web Application Development",
       description: "Responsive, modern web applications built with the latest technologies.",
-      Icon: FaDesktop
+      Icon: FaDesktop,
+      details: [
+        "Full-stack web development",
+        "Progressive Web Apps (PWA)",
+        "Cloud-native applications",
+        "API development and integration",
+        "Performance optimization"
+      ]
     },
     {
       title: "Automations",
       description: "Automations that can help you with your business.",
-      Icon: FaRobot
+      Icon: FaRobot,
+      details: [
+        "Workflow automation solutions",
+        "Process optimization",
+        "Integration with existing tools",
+        "Custom automation scripts",
+        "Monitoring and maintenance"
+      ]
     }
   ];
 
   return (
     <div className="w-full py-8">
-      <div className="mt-4">
+      <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesData.map((service, index) => (
             <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200 h-full">
@@ -72,12 +125,25 @@ const Services = () => {
                   title={service.title}
                   description={service.description}
                   Icon={service.Icon}
+                  onClick={() => setSelectedService(index)}
                 />
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Service Modal */}
+      {selectedService !== null && (
+        <ServiceModal
+          isOpen={selectedService !== null}
+          onClose={() => setSelectedService(null)}
+          title={servicesData[selectedService].title}
+          description={servicesData[selectedService].description}
+          Icon={servicesData[selectedService].Icon}
+          details={servicesData[selectedService].details}
+        />
+      )}
 
       {/* HIPAA CTA Section */}
       <div className="mt-16 relative overflow-hidden bg-gradient-to-br from-gray-50 to-white p-8 rounded-lg border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
@@ -99,9 +165,9 @@ const Services = () => {
           </div>
           <div className="lg:w-1/3 flex justify-center mt-6 lg:mt-0">
             <Link href="/services/hipaa">
-              <MagnetizeButton particleCount={15} attractRadius={100}>
+              <MetallicButton>
                 Learn More
-              </MagnetizeButton>
+              </MetallicButton>
             </Link>
           </div>
         </div>

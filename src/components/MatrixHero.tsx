@@ -12,9 +12,9 @@ export default function MatrixHero() {
           animationSpeed={2}
           containerClassName="bg-black"
           colors={[
-            [0, 180, 0], // Brighter green
-            [0, 220, 0], // Even brighter green
-            [100, 255, 100], // Light green
+            [147, 51, 234], // Purple
+            [168, 85, 247], // Light purple
+            [192, 132, 252], // Lighter purple
           ]}
           dotSize={3}
           opacities={[0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1]}
@@ -35,7 +35,7 @@ export default function MatrixHero() {
         <div className="mt-10">
           <Button
             size="lg"
-            className="bg-green-700 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105"
+            className="bg-violet-600 hover:bg-violet-500 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105"
           >
             Get Started
           </Button>
