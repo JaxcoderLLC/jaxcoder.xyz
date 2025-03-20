@@ -5,6 +5,7 @@ import { Card } from "@/components/AICard";
 import { Spotlight } from "@/components/Spotlight";
 import { FaArrowRight } from "react-icons/fa";
 import { GradientButton } from "./GradientButton";
+import { Button } from "./ui/button";
 
 export function AIHero() {
   return (
@@ -23,13 +24,25 @@ export function AIHero() {
               that capture attention and enhance your users experience.
             </p>
             <div className="sm:block flex justify-start mt-64 space-x-4">
-              <GradientButton className="slide-in">Learn More</GradientButton>
-              <GradientButton className="slide-in" variant="variant">
-                <div className="flex flex-row items-center justify-center">
-                  Get Started
-                  <FaArrowRight className="ml-2 h-4 w-4" />
-                </div>
-              </GradientButton>
+              {/* <GradientButton className="slide-in">Learn More</GradientButton> */}
+              <Button
+                size="lg"
+                className="bg-violet-600 hover:bg-violet-500 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-110"
+              >
+                Learn More
+              </Button>
+              {/* <GradientButton className="slide-in" variant="variant">
+                  <div className="flex flex-row items-center justify-center">
+                    Get Started
+                    <FaArrowRight className="ml-2 h-4 w-4" />
+                  </div>
+                </GradientButton> */}
+              <Button
+                size="lg"
+                className="bg-violet-600 hover:bg-violet-500 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-110"
+              >
+                Get Started
+              </Button>
             </div>
           </div>
 

@@ -9,7 +9,7 @@ export default function MatrixHero() {
       {/* Canvas Reveal Effect Background */}
       <div className="absolute inset-0">
         <CanvasRevealEffect
-          animationSpeed={2}
+          animationSpeed={6}
           containerClassName="bg-black"
           colors={[
             [147, 51, 234], // Purple
