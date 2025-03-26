@@ -7,11 +7,11 @@ import { FaArrowRight } from "react-icons/fa";
 import { GradientButton } from "./GradientButton";
 import { Button } from "./ui/button";
 
-export function AIHero() {
+const AIHero = () => {
   return (
     <div className="w-full p-4 sm:py-12 sm:px-6 lg:px-8">
       <Card className="w-full h-[300px] sm:h-[400px] md:h-[500px] bg-gradient-to-br from-violet-700 via-violet-900 to-purple-400 relative overflow-hidden">
-        <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" />
+        <Spotlight className="absolute z-20 -top-40 left-0 md:left-60 md:-top-20 opacity-80" />
 
         <div className="flex flex-col md:flex-row h-full">
           {/* Left content */}
@@ -47,7 +47,7 @@ export function AIHero() {
           </div>
 
           {/* Right content */}
-          <div className="flex-1 relative h-[200px] sm:h-[250px] md:h-full">
+          <div className="flex-1 relative h-[200px] sm:h-[250px] md:h-full z-10">
             <SplineScene
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
               className="w-full h-full"
@@ -57,4 +57,6 @@ export function AIHero() {
       </Card>
     </div>
   );
-}
+};
+
+export { AIHero };
