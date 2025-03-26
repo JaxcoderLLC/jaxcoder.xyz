@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,20 +22,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}><StackProvider app={stackServerApp}><StackTheme>
-        <div className="min-h-screen flex flex-col bg-white">
-          <AnimatedBackground />
-          <div className="relative z-10">
-            <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-              <Header />
-              <main className="flex-grow">
-                {children}
-              </main>
-              <Footer />
+      <body className={inter.className}>
+        <GoogleAnalytics />
+        <StackProvider app={stackServerApp}>
+          <StackTheme>
+            <div className="min-h-screen flex flex-col bg-white">
+              <AnimatedBackground />
+              <div className="relative z-10">
+                <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+                  <Header />
+                  <main className="flex-grow">
+                    {children}
+                  </main>
+                  <Footer />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </StackTheme></StackProvider></body>
+          </StackTheme>
+        </StackProvider>
+      </body>
     </html>
   );
 }

@@ -5,16 +5,17 @@ import { Card } from "@/components/AICard";
 import { Spotlight } from "@/components/Spotlight";
 import { FaArrowRight } from "react-icons/fa";
 import { GradientButton } from "./GradientButton";
+import { Button } from "./ui/button";
 
 export function AIHero() {
   return (
     <div className="w-full p-4 sm:py-12 sm:px-6 lg:px-8">
-      <Card className="w-full h-[300px] sm:h-[400px] md:h-[500px] bg-black/[0.96] relative overflow-hidden">
+      <Card className="w-full h-[300px] sm:h-[400px] md:h-[500px] bg-gradient-to-br from-violet-700 via-violet-900 to-purple-400 relative overflow-hidden">
         <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" />
 
         <div className="flex flex-col md:flex-row h-full">
           {/* Left content */}
-          <div className="flex-1 z-10 p-4 sm:p-6 md:p-8 relative z-9 flex flex-col justify-center">
+          <div className="flex-1 z-10 p-4 sm:p-6 md:p-8 relative flex flex-col justify-center">
             <h1 className="text-3xl hidden md:block md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
               Jaxcoder LLC
             </h1>
@@ -23,13 +24,25 @@ export function AIHero() {
               that capture attention and enhance your users experience.
             </p>
             <div className="sm:block flex justify-start mt-64 space-x-4">
-              <GradientButton className="slide-in">Learn More</GradientButton>
-              <GradientButton className="slide-in" variant="variant">
-                <div className="flex flex-row items-center justify-center">
-                  Get Started
-                  <FaArrowRight className="ml-2 h-4 w-4" />
-                </div>
-              </GradientButton>
+              {/* <GradientButton className="slide-in">Learn More</GradientButton> */}
+              <Button
+                size="lg"
+                className="bg-violet-600 hover:bg-violet-500 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-110"
+              >
+                Learn More
+              </Button>
+              {/* <GradientButton className="slide-in" variant="variant">
+                  <div className="flex flex-row items-center justify-center">
+                    Get Started
+                    <FaArrowRight className="ml-2 h-4 w-4" />
+                  </div>
+                </GradientButton> */}
+              <Button
+                size="lg"
+                className="bg-violet-600 hover:bg-violet-500 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-110"
+              >
+                Get Started
+              </Button>
             </div>
           </div>
 
