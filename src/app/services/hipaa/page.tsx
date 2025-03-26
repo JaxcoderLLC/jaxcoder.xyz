@@ -20,7 +20,7 @@ const HIPAAPage = () => {
           
           <div className="my-10 flex justify-center">
             <Image
-              src="/images/hipaa.gif"
+              src="/images/hipaa_1.gif"
               alt="HIPAA Privacy & Compliance"
               width={600}
               height={600}

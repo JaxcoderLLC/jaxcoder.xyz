@@ -2,6 +2,7 @@
 
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function MatrixHero() {
   return (
@@ -33,12 +34,12 @@ export default function MatrixHero() {
           digital landscape.
         </p>
         <div className="mt-10">
-          <Button
-            size="lg"
+          <Link
+            href="/contact"
             className="bg-violet-600 hover:bg-violet-500 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105"
           >
             Get Started
-          </Button>
+          </Link>
         </div>
       </div>
     </div>
