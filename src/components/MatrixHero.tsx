@@ -36,7 +36,7 @@ export default function MatrixHero() {
         <div className="mt-10">
           <Link
             href="/contact"
-            className="bg-violet-600 hover:bg-violet-500 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105"
+            className="bg-violet-600 hover:bg-violet-500 hover:shadow-2xl hover:shadow-violet-500 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105"
           >
             Get Started
           </Link>
