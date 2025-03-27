@@ -3,8 +3,6 @@
 import { SplineScene } from "@/components/Splite";
 import { Card } from "@/components/AICard";
 import { Spotlight } from "@/components/Spotlight";
-import { FaArrowRight } from "react-icons/fa";
-import { GradientButton } from "./GradientButton";
 import { Button } from "./ui/button";
 
 const AIHero = () => {
