@@ -18,12 +18,12 @@ const TermsOfService = () => {
 
           <h2 className="text-xl font-semibold mt-6 mb-4">2. Use of Site</h2>
           <p>
-            JaxCoder.xyz is intended to provide users with resources, content, and tools related to technology and software development. You agree to use this site only for lawful purposes and in a way that does not infringe the rights of others or restrict their use and enjoyment.
+            Jaxcoder.xyz is intended to provide users with resources, content, and tools related to technology and software development. You agree to use this site only for lawful purposes and in a way that does not infringe the rights of others or restrict their use and enjoyment.
           </p>
 
           <h2 className="text-xl font-semibold mt-6 mb-4">3. Intellectual Property</h2>
           <p>
-            All content, branding, logos, and code provided on JaxCoder.xyz are the property of JaxCoder.xyz or its respective content creators and are protected by applicable copyright, trademark, and intellectual property laws. You may not copy, reproduce, distribute, or create derivative works without express permission.
+            All content, branding, logos, and code provided on Jaxcoder.xyz are the property of Jaxcoder.xyz or its respective content creators and are protected by applicable copyright, trademark, and intellectual property laws. You may not copy, reproduce, distribute, or create derivative works without express permission.
           </p>
 
           <h2 className="text-xl font-semibold mt-6 mb-4">4. User Accounts</h2>
@@ -43,12 +43,12 @@ const TermsOfService = () => {
 
           <h2 className="text-xl font-semibold mt-6 mb-4">6. Third-Party Links</h2>
           <p>
-            JaxCoder.xyz may include links to third-party websites. We do not control or endorse those sites and are not responsible for their content or practices.
+            Jaxcoder.xyz may include links to third-party websites. We do not control or endorse those sites and are not responsible for their content or practices.
           </p>
 
           <h2 className="text-xl font-semibold mt-6 mb-4">7. Termination</h2>
           <p>
-            We reserve the right to suspend or terminate access to JaxCoder.xyz at any time, without notice, for conduct that we believe violates these Terms or is harmful to other users or the site.
+            We reserve the right to suspend or terminate access to Jaxcoder.xyz at any time, without notice, for conduct that we believe violates these Terms or is harmful to other users or the site.
           </p>
 
           <h2 className="text-xl font-semibold mt-6 mb-4">8. Disclaimer of Warranties</h2>
@@ -58,7 +58,7 @@ const TermsOfService = () => {
 
           <h2 className="text-xl font-semibold mt-6 mb-4">9. Limitation of Liability</h2>
           <p>
-            To the fullest extent permitted by law, JaxCoder.xyz shall not be liable for any indirect, incidental, or consequential damages arising from your use of the site or any content therein.
+            To the fullest extent permitted by law, Jaxcoder.xyz shall not be liable for any indirect, incidental, or consequential damages arising from your use of the site or any content therein.
           </p>
 
           <h2 className="text-xl font-semibold mt-6 mb-4">10. Changes to Terms</h2>
