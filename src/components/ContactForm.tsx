@@ -28,9 +28,7 @@ export default function ContactForm() {
     return (
       formData.name.trim() !== "" &&
       formData.email.trim() !== "" &&
-      formData.phone.trim() !== "" &&
-      formData.interest !== "" &&
-      formData.message.trim() !== ""
+      formData.interest !== ""
     );
   };
 
@@ -148,7 +146,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="phone" className="block text-sm font-medium">
-            Phone
+            Phone (optional)
           </label>
           <input
             type="tel"
@@ -202,11 +200,10 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={!isFormValid()}
-            className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
-              isFormValid()
+            className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${isFormValid()
                 ? "bg-black hover:bg-gray-800"
                 : "bg-gray-400 cursor-not-allowed"
-            } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500`}
+              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500`}
           >
             Send Message
           </button>
