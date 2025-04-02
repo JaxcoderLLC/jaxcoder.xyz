@@ -22,7 +22,7 @@ interface Particle {
 function MagnetizeButton({
   className,
   particleCount = 12,
-  attractRadius = 100,
+  attractRadius = 1000,
   ...props
 }: MagnetizeButtonProps) {
   const [isAttracting, setIsAttracting] = useState(false);
@@ -72,7 +72,7 @@ function MagnetizeButton({
         "hover:bg-violet-200 dark:hover:bg-violet-800",
         "text-violet-600 dark:text-violet-300",
         "border border-violet-300 dark:border-violet-700",
-        "transition-all duration-300",
+        "transition-all duration-500",
         className
       )}
       onMouseEnter={handleInteractionStart}
@@ -90,7 +90,7 @@ function MagnetizeButton({
           className={cn(
             "absolute w-1.5 h-1.5 rounded-full",
             "bg-violet-400 dark:bg-violet-300",
-            "transition-opacity duration-300",
+            "transition-opacity duration-500",
             isAttracting ? "opacity-100" : "opacity-40"
           )}
         />
@@ -98,11 +98,11 @@ function MagnetizeButton({
       <span className="relative w-full flex items-center justify-center gap-2">
         <Magnet
           className={cn(
-            "w-4 h-4 transition-transform duration-300",
+            "w-4 h-4 transition-transform duration-500",
             isAttracting && "scale-110"
           )}
         />
-        {isAttracting ? "Attracting" : "Contact Us Today"}
+        {isAttracting ? "Almost There" : "Contact Us Today"}
       </span>
     </Button>
   );

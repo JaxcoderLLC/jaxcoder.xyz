@@ -75,7 +75,7 @@ const AnimatedBackground = () => {
     }
 
     // Create more stars
-    const stars: Star[] = Array.from({ length: 150 }, () => new Star(canvas.width, canvas.height));
+    const stars: Star[] = Array.from({ length: 500 }, () => new Star(canvas.width, canvas.height));
 
     // Animation loop
     const animate = () => {
@@ -99,7 +99,7 @@ const AnimatedBackground = () => {
   }
 
   return (
-    <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
+    <div className="fixed inset-0 w-full h-full pointer-events-none z-auto">
       <canvas
         ref={canvasRef}
         className="w-full h-full"

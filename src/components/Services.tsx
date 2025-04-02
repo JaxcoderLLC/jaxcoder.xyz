@@ -245,12 +245,7 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Call to Action */}
-      <div className="mt-12 text-center z-20">
-        <Link href="/contact">
-          <MagnetizeButton particleCount={30} attractRadius={250}>Contact Us Today</MagnetizeButton>
-        </Link>
-      </div>
+
     </div>
   );
 };
