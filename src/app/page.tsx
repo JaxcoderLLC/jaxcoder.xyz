@@ -7,6 +7,10 @@ import Projects from "@/components/Projects";
 export default function Home() {
   return (
     <main className="min-h-screen m-4">
+      {/* Google Tag Manager (noscript) */}
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCQFDWGF"
+      height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe></noscript>
+      {/* End Google Tag Manager (noscript) */}
       <AIHero />
       <Services />
       <Projects />
