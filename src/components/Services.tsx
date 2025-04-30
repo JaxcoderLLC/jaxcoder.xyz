@@ -10,10 +10,9 @@ import {
   FaEthereum,
   FaRobot
 } from 'react-icons/fa';
-import { MagnetizeButton } from './MagnetButton';
-import MetallicButton from './MetallicButton';
 import ServiceModal from './ServiceModal';
 import { useState } from 'react';
+import { Button } from './ui/button';
 
 // Service card component
 const ServiceCard = ({ title, description, Icon, onClick }: {
@@ -165,9 +164,9 @@ const Services = () => {
           </div>
           <div className="lg:w-1/3 flex justify-center mt-6 lg:mt-0">
             <Link href="/services/hipaa">
-              <MetallicButton>
+              <Button>
                 Learn More
-              </MetallicButton>
+              </Button>
             </Link>
           </div>
         </div>

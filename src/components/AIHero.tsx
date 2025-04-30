@@ -7,9 +7,9 @@ import { Button } from "./ui/button";
 
 const AIHero = () => {
   return (
-    <div className="w-full p-4 sm:py-12 sm:px-6 lg:px-8">
-      <Card className="w-full h-[300px] sm:h-[400px] md:h-[500px] bg-gradient-to-br from-violet-700 via-violet-900 to-purple-400 relative overflow-hidden">
-        <Spotlight className="absolute z-20 -top-40 left-0 md:left-60 md:-top-20 opacity-80" />
+    <div className="w-full">
+      <Card className="w-full h-[200px] sm:h-[400px] md:h-[500px] bg-gradient-to-br from-violet-700 via-violet-900 to-purple-400 relative overflow-hidden">
+        <Spotlight className="hidden sm:block absolute z-20 -top-40 left-0 md:left-60 md:-top-20 opacity-80" />
 
         <div className="flex flex-col md:flex-row h-full">
           {/* Left content */}
@@ -38,7 +38,7 @@ const AIHero = () => {
           </div>
 
           {/* Right content */}
-          <div className="flex-1 relative h-[200px] sm:h-[250px] md:h-full z-10">
+          <div className="hidden sm:flex flex-1 relative h-[200px] sm:h-[250px] md:h-full z-10">
             <SplineScene
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
               className="w-full h-full"

@@ -1,11 +1,35 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import Link from "next/link";
 import AuthButtons from "./AuthButtons";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Close mobile menu when screen size changes to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobileMenuOpen]);
+
+  // Prevent body scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   const navLinks = [
     // { href: "/", label: "Home" },
@@ -17,7 +41,7 @@ const Header = () => {
   return (
     <header className="relative z-50">
       <nav className="w-full">
-        <div className="flex justify-between h-16 items-center font-bold">
+        <div className="flex justify-between h-16 items-center font-bold px-4">
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold text-black">
               Jaxcoder LLC
@@ -47,6 +71,8 @@ const Header = () => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-black hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
+              aria-expanded={isMobileMenuOpen}
+              aria-label="Toggle menu"
             >
               <span className="sr-only">Open main menu</span>
               {!isMobileMenuOpen ? (
@@ -85,31 +111,64 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-y-0 right-0 w-64 bg-white border-l border-gray-200 shadow-lg transform transition-transform duration-200 ease-in-out md:hidden z-[60] ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        style={{ top: "4rem" }}
+        className={`fixed inset-0 w-full h-full bg-white transform transition-transform duration-300 ease-in-out md:hidden z-[100] ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        <div className="py-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="block px-4 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50"
+        <div className="flex flex-col h-full">
+          <div className="flex justify-between items-center h-16 px-4 border-b">
+            <Link 
+              href="/" 
+              className="text-xl font-bold text-black"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {link.label}
+              Jaxcoder LLC
             </Link>
-          ))}
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 rounded-md text-gray-600 hover:text-black focus:outline-none"
+              aria-label="Close menu"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          
+          <div className="flex-1 overflow-y-auto py-4">
+            <div className="px-4 space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block py-3 text-lg font-medium text-gray-700 hover:text-black border-b border-gray-100"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              
+              <div className="pt-4">
+                <Suspense fallback={<div className="h-10 w-full animate-pulse rounded bg-gray-200" />}>
+                  <div onClick={() => setIsMobileMenuOpen(false)}>
+                    <AuthButtons />
+                  </div>
+                </Suspense>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Overlay */}
-      {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-25 md:hidden z-[55]"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
     </header>
   );
 };
