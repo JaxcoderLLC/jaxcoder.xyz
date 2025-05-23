@@ -3,6 +3,7 @@ import { AIHero } from "@/components/AIHero";
 import Link from "next/link";
 import Projects from "@/components/Projects";
 import { Button } from "@/components/ui/button";
+import MatrixHero from "@/components/MatrixHero";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCQFDWGF"
         height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
       {/* End Google Tag Manager (noscript) */}
-      <AIHero />
+      <MatrixHero />
       <Services />
       <Projects />
       {/* Call to Action */}

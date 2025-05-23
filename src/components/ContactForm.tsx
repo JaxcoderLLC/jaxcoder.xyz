@@ -87,7 +87,7 @@ export default function ContactForm() {
   return (
     <div>
       {isSubmitted && (
-        <div className="mb-4 sm:mb-6 p-4 sm:p-6 rounded-lg bg-green-50 border border-green-200 shadow-sm animate-fade-in">
+        <div className="sm:mb-6 p-4 sm:p-6 rounded-lg bg-green-100 border border-green-200 shadow-md animate-fade-in">
           <div className="flex items-start sm:items-center space-x-3">
             <div className="flex-shrink-0 mt-1 sm:mt-0">
               <svg className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { MagnetizeButton } from '@/components/MagnetButton';
+import { Button } from '@/components/ui/button';
 
 const HIPAAPage = () => {
   return (
@@ -97,9 +98,9 @@ const HIPAAPage = () => {
           
           <div className="mt-12 text-center">
             <Link href="/contact">
-              <MagnetizeButton particleCount={20} attractRadius={150}>
+              <Button>
                 Contact Us About HIPAA Compliance
-              </MagnetizeButton>
+              </Button>
             </Link>
           </div>
         </div>
