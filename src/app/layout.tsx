@@ -5,8 +5,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AnimatedBackground from "@/components/AnimatedBackground";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +39,7 @@ export default function RootLayout({
             </div>
           </StackTheme>
         </StackProvider>
+        <Analytics />
       </body>
     </html>
   );
