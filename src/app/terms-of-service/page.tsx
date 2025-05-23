@@ -12,7 +12,7 @@ const TermsOfService = () => {
 
           <h2 className="text-xl font-semibold mt-6 mb-4">1. Introduction</h2>
           <p>
-            Welcome to Jaxcoder LLC. By accessing our website and services, you
+            Welcome to Jax Labs. By accessing our website and services, you
             agree to these terms of service.
           </p>
 

@@ -44,7 +44,7 @@ const Header = () => {
         <div className="flex justify-between h-16 items-center font-bold px-4">
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold text-black">
-              Jaxcoder LLC
+              Jax Labs
             </Link>
           </div>
 
@@ -122,7 +122,7 @@ const Header = () => {
               className="text-xl font-bold text-black"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Jaxcoder LLC
+              Jax Labs
             </Link>
             <button
               onClick={() => setIsMobileMenuOpen(false)}

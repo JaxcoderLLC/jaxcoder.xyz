@@ -10,7 +10,7 @@ const About = () => {
           </h2>
           <div className="max-w-5xl mx-auto">
             <p className="mt-4 text-xl text-primary-600 text-center">
-              Jaxcoder LLC is a technology consulting firm specializing in custom software solutions.
+              Jax Labs is a technology consulting firm specializing in custom software solutions.
             </p>
             <p className="mt-4 text-lg text-primary-500 text-center">
               With years of experience in software development and digital transformation, 

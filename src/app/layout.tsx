@@ -11,8 +11,8 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Jaxcoder LLC",
-  description: "Jaxcoder LLC is a cutting edge technology company",
+  title: "Jax Labs",
+  description: "Jax Labs is a cutting edge technology company",
 };
 
 export default function RootLayout({

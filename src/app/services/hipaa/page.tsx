@@ -14,7 +14,7 @@ const HIPAAPage = () => {
           </h1>
           
           <p className="mt-4 text-xl text-primary-600">
-            At Jaxcoder LLC, we understand the critical importance of HIPAA compliance for healthcare organizations.
+            At Jax Labs, we understand the critical importance of HIPAA compliance for healthcare organizations.
             We provide specialized solutions to ensure your technology infrastructure meets all regulatory requirements.
           </p>
           

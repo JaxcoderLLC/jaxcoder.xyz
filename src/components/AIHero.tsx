@@ -15,7 +15,7 @@ const AIHero = () => {
           {/* Left content */}
           <div className="flex-1 z-10 p-4 sm:p-6 md:p-8 relative flex flex-col justify-center">
             <h1 className="text-3xl hidden md:block md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-              Jaxcoder LLC
+              Jax Labs
             </h1>
             <p className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base text-neutral-300 max-w-lg text-center md:text-left">
               Bring your business to life with AI. Create immersive experiences

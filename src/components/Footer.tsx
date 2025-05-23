@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
           <div className="flex text-center">
             <p className="text-black">
-            &copy;Jaxcoder LLC {new Date().getFullYear()}. All rights reserved.
+            &copy;Jax Labs {new Date().getFullYear()}. All rights reserved.
             </p></div>
         </div>
       </div>

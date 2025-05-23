@@ -175,7 +175,7 @@ export default function ServicesDetails() {
               Jacksonville, Florida, organizations can rely on advanced
               solutions like Odoo, a platform offering robust features and
               flexibility to implement and enforce HIPAA controls effectively.
-              With the guidance of experienced partners such as Jaxcoder LLC,
+              With the guidance of experienced partners such as Jax Labs,
               local healthcare providers can navigate the complexities of data
               security confidently, ensuring the highest standards of patient
               care and information protection. Together, we help Jacksonville's
