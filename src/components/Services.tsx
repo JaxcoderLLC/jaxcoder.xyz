@@ -76,18 +76,6 @@ const Services = () => {
       ]
     },
     {
-      title: "Blockchain Development",
-      description: "Scalable, secure, and cost-effective blockchain development services.",
-      Icon: FaEthereum,
-      details: [
-        "Smart contract development",
-        "DApp creation and deployment",
-        "Blockchain integration services",
-        "Security auditing and testing",
-        "Token development and management"
-      ]
-    },
-    {
       title: "Web Application Development",
       description: "Responsive, modern web applications built with the latest technologies.",
       Icon: FaDesktop,
@@ -110,7 +98,17 @@ const Services = () => {
         "Custom automation scripts",
         "Monitoring and maintenance"
       ]
-    }
+    },
+    {
+      title: "Problem Solving",
+      description: "We solve problems with technology.",
+      Icon: FaBrain,
+      details: [
+        "We solve problems with technology.",
+        "We are problem solvers.",
+        "We are not afraid to tackle complex problems.",
+      ]
+    },
   ];
 
   return (

@@ -1,6 +1,7 @@
 import { IconType } from 'react-icons';
 import { MagnetizeButton } from './MagnetButton';
 import Link from 'next/link';
+import { Button } from './ui/button';
 
 interface ServiceModalProps {
   isOpen: boolean;
@@ -38,19 +39,19 @@ const ServiceModal = ({ isOpen, onClose, title, description, Icon, details }: Se
         <div className="space-y-4 mb-8">
           {details.map((detail, index) => (
             <div key={index} className="flex items-start space-x-3 group">
-              <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-violet-600 text-white flex items-center justify-center text-sm font-medium shadow-sm shadow-violet-600/20 group-hover:shadow-violet-600/40 transition-shadow">
+              <div className="flex-shrink-0 w-8 h-8 mt-1 rounded-full bg-violet-600 text-white flex items-center justify-center text-sm font-medium shadow-lg shadow-violet-600/20 group-hover:shadow-violet-600/40 transition-shadow">
                 {index + 1}
               </div>
-              <p className="text-gray-700 group-hover:text-gray-900 transition-colors">{detail}</p>
+              <p className="mt-2 text-gray-700 group-hover:text-gray-900 transition-colors">{detail}</p>
             </div>
           ))}
         </div>
 
         <div className="flex justify-center pt-4 border-t border-gray-100">
           <Link href="/contact">
-            <MagnetizeButton particleCount={20} attractRadius={150}>
+            <Button>
               Get Started
-            </MagnetizeButton>
+            </Button>
           </Link>
         </div>
       </div>
