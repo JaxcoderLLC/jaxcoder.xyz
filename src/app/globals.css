@@ -29,31 +29,31 @@
 
   @property --color-1 {
     syntax: '<color>';
-    initial-value: #000;
+    initial-value: #042f2e;
     inherits: false;
   }
 
   @property --color-2 {
     syntax: '<color>';
-    initial-value: #08012c;
+    initial-value: #0f766e;
     inherits: false;
   }
 
   @property --color-3 {
     syntax: '<color>';
-    initial-value: #4e1e40;
+    initial-value: #14b8a6;
     inherits: false;
   }
 
   @property --color-4 {
     syntax: '<color>';
-    initial-value: #70464e;
+    initial-value: #0ea5e9;
     inherits: false;
   }
 
   @property --color-5 {
     syntax: '<color>';
-    initial-value: #88394c;
+    initial-value: #075985;
     inherits: false;
   }
 
@@ -65,13 +65,13 @@
 
   @property --border-color-1 {
     syntax: '<color>';
-    initial-value: hsla(340, 75%, 60%, 0.2);
+    initial-value: hsla(174, 79%, 40%, 0.2);
     inherits: true;
   }
 
   @property --border-color-2 {
     syntax: '<color>';
-    initial-value: hsla(340, 75%, 40%, 0.75);
+    initial-value: hsla(200, 89%, 48%, 0.75);
     inherits: true;
   }
 
@@ -106,56 +106,60 @@
   }
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --foreground: 174 44% 16%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 174 44% 16%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --popover-foreground: 174 44% 16%;
+    --primary: 174 79% 40%;
+    --primary-foreground: 174 84% 95%;
+    --secondary: 200 89% 48%;
+    --secondary-foreground: 200 100% 97%;
+    --muted: 174 20% 94%;
+    --muted-foreground: 174 8% 40%;
+    --accent: 123 57% 54%;
+    --accent-foreground: 123 80% 10%;
+    --warm: 16 82% 60%;
+    --warm-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --border: 174 20% 88%;
+    --input: 174 20% 88%;
+    --ring: 174 79% 40%;
+    --chart-1: 174 79% 40%;
+    --chart-2: 200 89% 48%;
+    --chart-3: 123 57% 54%;
+    --chart-4: 16 82% 60%;
+    --chart-5: 174 40% 65%;
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 174 20% 6%;
+    --foreground: 174 20% 95%;
+    --card: 174 20% 8%;
+    --card-foreground: 174 20% 95%;
+    --popover: 174 20% 8%;
+    --popover-foreground: 174 20% 95%;
+    --primary: 174 72% 56%;
+    --primary-foreground: 174 80% 10%;
+    --secondary: 200 85% 55%;
+    --secondary-foreground: 200 90% 10%;
+    --muted: 174 15% 18%;
+    --muted-foreground: 174 10% 65%;
+    --accent: 123 50% 48%;
+    --accent-foreground: 123 70% 95%;
+    --warm: 16 75% 65%;
+    --warm-foreground: 16 80% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 174 15% 18%;
+    --input: 174 15% 18%;
+    --ring: 174 72% 56%;
+    --chart-1: 174 72% 56%;
+    --chart-2: 200 85% 55%;
+    --chart-3: 123 50% 48%;
+    --chart-4: 16 75% 65%;
+    --chart-5: 174 40% 70%;
   }
 }
 
@@ -211,14 +215,14 @@
     --pos-y: 91.51%;
     --spread-x: 120.24%;
     --spread-y: 103.18%;
-    --color-1: #c96287;
-    --color-2: #c66c64;
-    --color-3: #cc7d23;
-    --color-4: #37140a;
-    --color-5: #000;
+    --color-1: #ccfbf1;
+    --color-2: #5eead4;
+    --color-3: #14b8a6;
+    --color-4: #0ea5e9;
+    --color-5: #082f49;
     --border-angle: 190deg;
-    --border-color-1: hsla(340, 78%, 90%, 0.1);
-    --border-color-2: hsla(340, 75%, 90%, 0.6);
+    --border-color-1: hsla(174, 79%, 90%, 0.3);
+    --border-color-2: hsla(200, 89%, 80%, 0.8);
     --stop-1: 0%;
     --stop-2: 8.8%;
     --stop-3: 21.44%;
@@ -227,13 +231,13 @@
   }
 
   .gradient-button-variant {
-    --color-1: #000022;
-    --color-2: #1f3f6d;
-    --color-3: #469396;
-    --color-4: #f1ffa5;
+    --color-1: #042f2e;
+    --color-2: #0d9488;
+    --color-3: #2dd4bf;
+    --color-4: #7dd3fc;
     --border-angle: 200deg;
-    --border-color-1: hsla(320, 75%, 90%, 0.6);
-    --border-color-2: hsla(320, 50%, 90%, 0.15);
+    --border-color-1: hsla(174, 79%, 80%, 0.6);
+    --border-color-2: hsla(200, 89%, 70%, 0.15);
   }
 
   .gradient-button-variant:hover {
@@ -241,19 +245,19 @@
     --pos-y: 95.51%;
     --spread-x: 110.24%;
     --spread-y: 110.2%;
-    --color-1: #000020;
-    --color-2: #f1ffa5;
-    --color-3: #469396;
-    --color-4: #1f3f6d;
-    --color-5: #000;
+    --color-1: #f0fdfa;
+    --color-2: #5eead4;
+    --color-3: #0ea5e9;
+    --color-4: #0369a1;
+    --color-5: #042f2e;
     --stop-1: 0%;
     --stop-2: 10%;
     --stop-3: 35.44%;
     --stop-4: 71.34%;
     --stop-5: 90.76%;
     --border-angle: 210deg;
-    --border-color-1: hsla(320, 75%, 90%, 0.2);
-    --border-color-2: hsla(320, 50%, 90%, 0.75);
+    --border-color-1: hsla(174, 79%, 90%, 0.2);
+    --border-color-2: hsla(200, 89%, 90%, 0.75);
   }
 }
 
