@@ -75,7 +75,7 @@ const Projects = () => {
       url: "https://ethdenver.com",
       image: "/images/eden-sm-logo.png",
       alt: "ETHDenver",
-      backgroundColor: "bg-purple-100",
+      backgroundColor: "bg-primary-100",
       description: "ETHDenver - The world's largest Web3 BUIDLathon"
     },
     // TODO: Add project images for current and past projects @codenamejason
@@ -83,21 +83,21 @@ const Projects = () => {
       url: "https://loadoutent.gg/",
       image: "/images/le_logo.png",
       alt: "Loadout Entertainment",
-      backgroundColor: "bg-white",
+      backgroundColor: "bg-card",
       description: "Event Operations and Execution"
     },
     {
       url: "https://santehomeinfusions.com/",
       image: "/images/sante-1.png",
       alt: "Santé Home Infusions",
-      backgroundColor: "bg-green-100",
+      backgroundColor: "bg-secondary-100",
       description: "Medical infusion services for patients at home"
     },
     {
       url: "/",
       image: "/images/tire-1.jpg",
       alt: "Truck Track",
-      backgroundColor: "bg-black",
+      backgroundColor: "bg-primary-950",
       description: "Fleet management and vehicle tracking platform"
     },
     // { url: "https://project5-url.com", image: "/images/eden-sm-logo.png", alt: "Project 5" },
@@ -108,7 +108,7 @@ const Projects = () => {
 
   return (
     <div className="my-8">
-      <h2 className="text-2xl font-bold text-center mb-6">Our Projects</h2>
+      <h2 className="text-2xl font-bold text-center mb-6 text-foreground">Our Projects</h2>
       <div className="relative overflow-hidden">
         <div
           ref={scrollRef}
@@ -121,7 +121,7 @@ const Projects = () => {
               className="flex-shrink-0"
             >
               <div className="flex flex-col w-[300px]">
-                <div className={`relative h-[200px] rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 ${project.backgroundColor || 'bg-gray-100'}`}>
+                <div className={`relative h-[200px] rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 ${project.backgroundColor || 'bg-muted'}`}>
                   {project.alt === "Truck Track" ? (
                     <div className="w-full h-full flex items-center justify-center">
                       <div className="w-3/4 h-3/4 relative animate-spin-slow hover:animate-none">
@@ -144,8 +144,8 @@ const Projects = () => {
                 </div>
                 {project.description && (
                   <div className="mt-2 text-center px-2">
-                    <p className="text-sm text-gray-700 font-medium truncate">{project.alt}</p>
-                    <p className="text-xs text-gray-500 line-clamp-2">{project.description}</p>
+                    <p className="text-sm text-foreground font-medium truncate">{project.alt}</p>
+                    <p className="text-xs text-muted-foreground line-clamp-2">{project.description}</p>
                   </div>
                 )}
               </div>

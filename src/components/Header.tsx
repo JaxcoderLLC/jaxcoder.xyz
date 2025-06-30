@@ -3,6 +3,7 @@
 import { Suspense, useState, useEffect } from "react";
 import Link from "next/link";
 import AuthButtons from "./AuthButtons";
+import { ThemeToggle } from "./theme-toggle";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,7 +44,7 @@ const Header = () => {
       <nav className="w-full">
         <div className="flex justify-between h-16 items-center font-bold px-4">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-black">
+            <Link href="/" className="text-xl font-bold text-foreground">
               Jax Labs
             </Link>
           </div>
@@ -55,12 +56,13 @@ const Header = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-700 hover:text-black hover:bg-gray-50 px-3 py-2 transition-colors hover:border-gray-200 hover:border-2 hover:rounded-lg"
+                  className="text-muted-foreground hover:text-foreground hover:bg-muted/50 px-3 py-2 transition-colors hover:border-border hover:border-2 hover:rounded-lg"
                 >
                   {link.label}
                 </Link>
               ))}
-              <Suspense fallback={<div className="h-8 w-8 animate-pulse rounded-full bg-gray-200" />}>
+              <ThemeToggle />
+              <Suspense fallback={<div className="h-8 w-8 animate-pulse rounded-full bg-muted" />}>
                 <AuthButtons />
               </Suspense>
             </div>
@@ -70,7 +72,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-black hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ring"
               aria-expanded={isMobileMenuOpen}
               aria-label="Toggle menu"
             >
@@ -111,7 +113,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 w-full h-full bg-white transform transition-transform duration-300 ease-in-out md:hidden z-[100] ${
+        className={`fixed inset-0 w-full h-full bg-background transform transition-transform duration-300 ease-in-out md:hidden z-[100] ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -119,14 +121,14 @@ const Header = () => {
           <div className="flex justify-between items-center h-16 px-4 border-b">
             <Link 
               href="/" 
-              className="text-xl font-bold text-black"
+              className="text-xl font-bold text-foreground"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Jax Labs
             </Link>
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2 rounded-md text-gray-600 hover:text-black focus:outline-none"
+              className="p-2 rounded-md text-muted-foreground hover:text-foreground focus:outline-none"
               aria-label="Close menu"
             >
               <svg
@@ -151,15 +153,18 @@ const Header = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block py-3 text-lg font-medium text-gray-700 hover:text-black border-b border-gray-100"
+                  className="block py-3 text-lg font-medium text-muted-foreground hover:text-foreground border-b border-border"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
               
-              <div className="pt-4">
-                <Suspense fallback={<div className="h-10 w-full animate-pulse rounded bg-gray-200" />}>
+              <div className="pt-4 space-y-4">
+                <div className="flex justify-center">
+                  <ThemeToggle />
+                </div>
+                <Suspense fallback={<div className="h-10 w-full animate-pulse rounded bg-muted" />}>
                   <div onClick={() => setIsMobileMenuOpen(false)}>
                     <AuthButtons />
                   </div>

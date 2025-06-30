@@ -9,20 +9,20 @@ export default function Footer() {
           <div className="flex flex-row gap-4 items-center">
             <Link
               href="/privacy-policy"
-              className="text-black hover:text-gray-700 transition-colors"
+              className="text-foreground hover:text-muted-foreground transition-colors"
             >
               Privacy Policy
             </Link>
-            <span className="text-gray-300">•</span>
+            <span className="text-muted">•</span>
             <Link
               href="/terms-of-service"
-              className="text-black hover:text-gray-700 transition-colors"
+              className="text-foreground hover:text-muted-foreground transition-colors"
             >
               Terms of Service
             </Link>
           </div>
           <div className="flex text-center">
-            <p className="text-black">
+            <p className="text-foreground">
             &copy;Jax Labs {new Date().getFullYear()}. All rights reserved.
             </p></div>
         </div>
