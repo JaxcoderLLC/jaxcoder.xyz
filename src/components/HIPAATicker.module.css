@@ -1,0 +1,99 @@
+/* HIPAA Ticker CSS Module for React */
+
+.ticker {
+  background-color: #e3593d; /* warm-600 */
+  color: white !important;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  border-top: 2px solid #bc4033; /* warm-700 */
+  border-bottom: 2px solid #bc4033; /* warm-700 */
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 40px;
+}
+
+.label {
+  display: block;
+  background-color: #bc4033; /* warm-700 */
+  color: white !important;
+  padding: 8px 12px;
+  margin-right: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.content {
+  display: flex;
+  animation: scrollLeft 60s linear infinite;
+  padding-left: 150px; /* Space for label */
+  color: white !important;
+  white-space: nowrap;
+}
+
+.violationItem {
+  display: inline-block;
+  margin-right: 50px;
+  padding-right: 50px;
+  border-right: 1px solid rgba(255,255,255,0.3);
+  color: white !important;
+}
+
+.violationItem:last-child {
+  border-right: none;
+}
+
+.loading {
+  text-align: center;
+  font-style: italic;
+  opacity: 0.8;
+  padding-left: 120px;
+}
+
+.error {
+  background-color: #6c757d;
+  text-align: center;
+  padding-left: 120px;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-200%, 0, 0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ticker {
+    font-size: 12px;
+  }
+  
+  .label {
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+  
+  .content,
+  .loading,
+  .error {
+    padding-left: 100px;
+  }
+}

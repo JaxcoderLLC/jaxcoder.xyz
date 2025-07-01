@@ -1,3 +1,5 @@
+import HIPAATicker from "./HIPAATicker";
+
 export default function HealthcareLanding() {
   return (
     <div className="min-h-screen bg-background">
@@ -13,7 +15,7 @@ export default function HealthcareLanding() {
               <span className="text-warm-400"> Will Get You Fined</span>
             </h1>
             <p className="text-xl text-primary-100 mb-8 max-w-4xl mx-auto">
-              Most healthcare tech is a compliance nightmare waiting to happen. 
+              Most healthcare tech is a compliance nightmare waiting to happen.
               We build HIPAA-compliant systems that actually protect your patients and your business.
             </p>
             <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
@@ -25,6 +27,9 @@ export default function HealthcareLanding() {
               </a>
             </div>
           </div>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full">
+          <HIPAATicker />
         </div>
       </div>
 
@@ -116,11 +121,11 @@ export default function HealthcareLanding() {
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-4">The Challenge</h3>
               <p className="text-lg text-foreground/80 mb-6">
-                Santé Home Healthcare was operating with paper-based field operations, manual data entry, 
-                and basic digital forms. Their 80-100 field nurses had no secure way to handle patient data, 
+                Santé Home Healthcare was operating with paper-based field operations, manual data entry,
+                and basic digital forms. Their 80-100 field nurses had no secure way to handle patient data,
                 creating massive HIPAA liability.
               </p>
-              
+
               <h3 className="text-2xl font-bold text-foreground mb-4">Our Solution</h3>
               <div className="space-y-4 mb-6">
                 <div className="flex items-start space-x-3">
@@ -338,14 +343,14 @@ export default function HealthcareLanding() {
           </div>
 
           <div className="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center">
-            <a 
-              href="/contact" 
+            <a
+              href="/contact"
               className="block sm:inline-block bg-primary-600 hover:bg-primary-700 px-10 py-4 text-lg font-semibold rounded-lg transition-colors text-white"
             >
               Schedule Assessment Call
             </a>
-            <a 
-              href="mailto:jromero@jaxcoder.xyz" 
+            <a
+              href="mailto:jromero@jaxcoder.xyz"
               className="block sm:inline-block border border-primary-400 hover:border-white px-10 py-4 text-lg font-semibold rounded-lg transition-colors text-white"
             >
               Email Directly
